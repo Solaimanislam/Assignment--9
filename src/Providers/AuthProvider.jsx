@@ -1,12 +1,35 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import PropTypes from 'prop-types';
+import auth from "../farebase/fairbase.config";
 
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
 
-    const AuthInfo = {name: 'nodi sagor'}
+    const [user, setUser] = useState(null);
+
+    const createUser = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password )
+
+    }
+
+    const signInUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    useEffect( () => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            console.log('observing current user', currentUser);
+        });
+        return () => {
+            unSubscribe();
+        }
+    } ,[])
+
+    const AuthInfo = {user, createUser, signInUser}
 
     return (
         <AuthContext.Provider value={AuthInfo}>
