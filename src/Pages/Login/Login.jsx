@@ -1,27 +1,68 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../farebase/fairbase.config";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
 
-    const {signInUser} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const { signInUser } = useContext(AuthContext);
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [user, setUser] = useState(null);
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setUser(loggedUser);
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            setUser(loggedUser);
+        })
+        .catch(error => {
+            console.error(error.message);
+        })
+    }
 
     const handleLogin = e => {
         e.preventDefault();
-        console.log('Login button clicked');
+
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
 
+        // reset 
+        setRegisterError('');
+        setSuccess('');
+
         signInUser(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                setSuccess('User Logged in Successfully');
+            })
+            .catch(error => {
+                console.error(error);
+                setRegisterError(error.message);
+            })
 
     }
 
@@ -32,7 +73,7 @@ const Login = () => {
                 <div className="hero-content w-full flex-col">
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold">Login now!</h1>
-                        
+
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form className="card-body" onSubmit={handleLogin}>
@@ -55,10 +96,21 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <div className="text-3xl flex justify-center gap-6">
+                            <div className=" " onClick={handleGoogleSignIn}><FcGoogle /></div>
+                            <div className=" " onClick={handleGithubSignIn}><FaGithub /></div>
+                        </div>
+                        {
+                            registerError && <p className=" text-red-600 font-bold">{registerError}</p>
+                        }
+                        {
+                            success && <p className=" text-green-500 font-bold">{success}</p>
+                        }
                         <p className=" ml-9">New to myWebsite? please <Link to='/register'>
                             <button className="btn btn-link">Register</button>
                         </Link></p>
                     </div>
+
                 </div>
             </div>
         </div>
