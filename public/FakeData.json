@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern Family Home with Pool",
+      "segment_name": "Luxury",
+      "description": "Spacious and contemporary family home with a private pool, perfect for entertaining guests.",
+      "price": 550000,
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "123 Main Street, Anytown",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image_url": "https://i.ibb.co/pdGGhxS/card1.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Urban Loft",
+      "segment_name": "Urban",
+      "description": "Charming loft-style apartment in the heart of the city, ideal for young professionals.",
+      "price": 2000,
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "456 Elm Avenue, City Center",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/87ZQLgY/card2.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Classic Suburban Residence",
+      "segment_name": "Family",
+      "description": "Traditional family home nestled in a quiet suburban neighborhood, close to schools and parks.",
+      "price": 350000,
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "789 Oak Drive, Suburbia",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/Kbq1BqS/3.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Seaside Villa with Ocean Views",
+      "segment_name": "Luxury",
+      "description": "Exquisite waterfront villa with breathtaking ocean views, perfect for luxury living.",
+      "price": 1200000,
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "101 Beachfront Avenue, Coastal Town",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image_url": "https://i.ibb.co/fFykFWJ/card4.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Rustic Mountain Retreat",
+      "segment_name": "Nature",
+      "description": "Cozy cabin nestled in the mountains, surrounded by nature trails and scenic vistas.",
+      "price": 300000,
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "222 Mountain Road, Scenic Valley",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/Bcsw0t0/card5.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Modern City Apartment",
+      "segment_name": "Urban",
+      "description": "Sleek and stylish apartment in a vibrant urban neighborhood, close to shops and restaurants.",
+      "price": 1800,
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "333 Downtown Avenue, Cityscape",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/dBP41mq/card6.jpg"
+    },
+    {
+      "id": 7,
+      "estate_title": "Elegant Countryside Manor",
+      "segment_name": "Luxury",
+      "description": "Stately manor house set on acres of picturesque countryside, offering refined luxury living.",
+      "price": 750000,
+      "status": "sale",
+      "area": "6000 sq ft",
+      "location": "444 Countryside Lane, Rural Retreat",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image_url": "https://i.ibb.co/PFtmH3y/card7.jpg"
+    },
+    {
+      "id": 8,
+      "estate_title": "Charming Townhouse in Historic District",
+      "segment_name": "Heritage",
+      "description": "Quaint townhouse located in a historic district, featuring vintage charm and modern amenities.",
+      "price": 400000,
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "555 Heritage Street, Old Town",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/dfpVWhg/card8.jpg"
+    },
+    {
+      "id": 9,
+      "estate_title": "Contemporary Lakeside Retreat",
+      "segment_name": "Nature",
+      "description": "Sleek and modern retreat overlooking a tranquil lake, offering a serene escape from city life.",
+      "price": 500000,
+      "status": "sale",
+      "area": "3500 sq ft",
+      "location": "666 Lakeside Drive, Serenity Bay",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/mytNMqr/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge.jpg"
+    },
+    {
+      "id": 10,
+      "estate_title": "Spacious Family Home with Garden",
+      "segment_name": "Family",
+      "description": "Generously sized family home with a beautiful garden, perfect for outdoor gatherings and play.",
+      "price": 450000,
+      "status": "sale",
+      "area": "2800 sq ft",
+      "location": "777 Garden Street, Green Acres",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/VvY6TzL/card10.jpg"
+    }
+  ]
+  

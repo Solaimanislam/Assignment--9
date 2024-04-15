@@ -16,14 +16,14 @@ const Login = () => {
     const { signInUser } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                setUser(loggedUser);
+                
             })
             .catch(error => {
                 console.error(error.message);
@@ -35,7 +35,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
-            setUser(loggedUser);
+            
         })
         .catch(error => {
             console.error(error.message);
