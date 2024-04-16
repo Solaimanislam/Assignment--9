@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Property from "../Pages/Property/Property";
 import PrivateRoutes from "./PrivateRoutes";
 import Error from "../Pages/Error/Error";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
                 path: '/cards/:id',
                 element: <PrivateRoutes><Property></Property></PrivateRoutes>,
                 loader: () => fetch('/FakeData.json')
+            },
+            {
+                path: '/UpdateP',
+                element: <PrivateRoutes><UpdateProfile></UpdateProfile> </PrivateRoutes>
             }
         ]
     }

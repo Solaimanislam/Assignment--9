@@ -8,9 +8,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { TabTitle } from "../../utils/Gtitle";
 
 
 const Login = () => {
+    TabTitle('Login');
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -81,7 +83,9 @@ const Login = () => {
         <div>
             <Navbar></Navbar>
             <ToastContainer />
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-base-200" data-aos="zoom-in"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">
                 <div className="hero-content w-full flex-col">
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -118,7 +122,7 @@ const Login = () => {
                         {
                             success && <p className=" text-green-500 font-bold">{success}</p>
                         }
-                        <p className=" lg:ml-9 text-lg ">New to myWebsite? please<Link to='/register'>
+                        <p className=" lg:ml-9 ml-3 text-lg ">New to myWebsite? please<Link to='/register'>
                             <button className="btn btn-link text-lg font-semibold">Register</button>
                         </Link></p>
                     </div>

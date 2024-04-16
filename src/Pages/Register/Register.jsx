@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -6,11 +6,16 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { TabTitle } from "../../utils/Gtitle";
 
 
 const Register = () => {
+    TabTitle('Register');
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const { createUser } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
@@ -46,13 +51,12 @@ const Register = () => {
 
         createUser(email, password, name, image)
             .then(result => {
-                updateUserProfile(name, image)
-                .then(() => {
-                    toast.success('User updated Successfully');
-                })
+               
                 console.log(result.user)
                 // setSuccess('User Created Successfully');
                 toast.success('User Created Successfully');
+                 // Navigate after login
+                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error);
@@ -67,7 +71,9 @@ const Register = () => {
         <div>
             <Navbar></Navbar>
             <ToastContainer />
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-base-200" data-aos="fade-up"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">
                 <div className="hero-content w-full flex-col">
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold">Please Register now!</h1>
