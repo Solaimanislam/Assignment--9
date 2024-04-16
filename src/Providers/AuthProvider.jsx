@@ -1,21 +1,31 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import PropTypes from 'prop-types';
 import auth from "../farebase/fairbase.config";
 
 
 export const AuthContext = createContext(null);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password )
+        return createUserWithEmailAndPassword(auth, email, password)
 
     }
+
+    // update user
+
+    const updateUserProfile = (name, image) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, 
+            photoURL: image
+        })
+    }
+
 
     const signInUser = (email, password) => {
         setLoading(true);
@@ -27,7 +37,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    useEffect( () => {
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
@@ -36,9 +46,9 @@ const AuthProvider = ({children}) => {
         return () => {
             unSubscribe();
         }
-    } ,[])
+    }, [])
 
-    const AuthInfo = {user, createUser, signInUser, logOut, loading}
+    const AuthInfo = { user, createUser, signInUser, logOut, loading, updateUserProfile }
 
     return (
         <AuthContext.Provider value={AuthInfo}>

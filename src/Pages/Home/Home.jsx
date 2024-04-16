@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import Slider from "../../Shared/slider/Slider";
 import SingleCard from "../SingleCard/SingleCard";
+import Footer from "../Footer/Footer";
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
                 <p className=" text-xl font-medium">The Largest Residential Area, also known simply as TLRA, is a sprawling suburban community located just outside the bustling city center. With its vast expanse of neatly arranged streets and housing complexes, TLRA is home to thousands of families seeking a peaceful yet convenient lifestyle.</p>
             </div>
             {/* card section */}
-            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-10">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:my-10">
                 {
                     cards.map(card => <SingleCard
                         key={card.id}
@@ -24,7 +25,10 @@ const Home = () => {
                         ></SingleCard>)
                 }
             </div>
+            {/* details section */}
+            <Footer></Footer>
         </div>
+        
     );
 };
 

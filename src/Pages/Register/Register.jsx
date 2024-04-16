@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-// import toast, { Toaster } from "react-hot-toast";
+
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
@@ -18,6 +20,7 @@ const Register = () => {
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
+        const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, email, password);
@@ -27,27 +30,34 @@ const Register = () => {
         setSuccess('');
 
         if (password.length < 6) {
-            setRegisterError('Password should be at least 6 characters');
+            toast.warning('Password should be at least 6 characters');
             return;
         }
         else if (!/[A-Z]/.test(password)) {
-            setRegisterError('Your password should have at least one Uppercase characters.');
+            toast.warning('Your password should have at least one Uppercase characters.');
             return;
         }
         else if (!/[a-z]/.test(password)) {
-            setRegisterError('Your password should have at least one Lowercase characters.');
+            
+            toast.warning('Your password should have at least one Lowercase characters.');
             return;
         }
 
 
-        createUser(email, password)
+        createUser(email, password, name, image)
             .then(result => {
+                updateUserProfile(name, image)
+                .then(() => {
+                    toast.success('User updated Successfully');
+                })
                 console.log(result.user)
-                setSuccess('User Created Successfully');
+                // setSuccess('User Created Successfully');
+                toast.success('User Created Successfully');
             })
             .catch(error => {
                 console.error(error);
-                setRegisterError(error.message);
+                // setRegisterError(error.message);
+                toast.warn('Email-already-in-use');
             })
 
 
@@ -56,6 +66,7 @@ const Register = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <ToastContainer />
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-full flex-col">
                     <div className="text-center ">
@@ -74,7 +85,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
-                                <input type="text" placeholder="photoURL" name="name" className="input input-bordered" required />
+                                <input type="text" placeholder="photoURL" name="image" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">

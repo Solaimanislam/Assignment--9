@@ -6,6 +6,8 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebas
 import auth from "../../farebase/fairbase.config";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -64,11 +66,13 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 e.target.reset();
-                setSuccess('User Logged in Successfully');
+                // setSuccess('User Logged in Successfully');
+                toast.success('User Logged in Successfully');
             })
             .catch(error => {
                 console.error(error);
-                setRegisterError(error.message);
+                // setRegisterError(error.message);
+                toast.warn('auth/invalid-credential');
             })
 
     }
@@ -76,6 +80,7 @@ const Login = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <ToastContainer />
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-full flex-col">
                     <div className="text-center ">

@@ -5,12 +5,14 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Property from "../Pages/Property/Property";
 import PrivateRoutes from "./PrivateRoutes";
+import Error from "../Pages/Error/Error";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -27,7 +29,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cards/:id',
-                element: <PrivateRoutes><Property></Property></PrivateRoutes>
+                element: <PrivateRoutes><Property></Property></PrivateRoutes>,
+                loader: () => fetch('/FakeData.json')
             }
         ]
     }
