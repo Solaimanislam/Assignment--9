@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const NavLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/property'>Property</NavLink></li>
+
         <li><NavLink to='/login'>Login</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
         <li><NavLink to='/contact'>Contact Us</NavLink></li>
@@ -42,16 +42,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        {/* <img src={user.photoURL} alt="" /> */}
-                    </div>
-                </div>
+
                 <Link to='/login'>
                     {
                         user ? <>
-
-                            <span>{user.email}</span>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mb-0">
+                                <div className="w-10 mb-0 rounded-full">
+                                    <img className="mb-0 p-0" src={user.photoURL} alt="" />
+                                </div>
+                            </div>
+                            {/* <span>{user.email}</span> */}
                             <button onClick={handleLogout} className="btn">Sign Out</button>
                         </> : <Link to='/login'><button className="btn">Login</button></Link>
 

@@ -1,13 +1,17 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SingleCard = ({ cards }) => {
-    const { estate_title, image_url, segment_name, location, status } = cards;
+    const { estate_title, image_url, segment_name, location, status, id } = cards;
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
             <figure><img className=" w-full lg:h-[300px]" src={image_url} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{estate_title}</h2>
+                <div className="flex items-center justify-between">
+                    <h2 className="card-title">{estate_title}</h2>
+                    <h4 className=" text-lg font-medium text-orange-500 border border-yellow-400 px-3 rounded-lg">{status}</h4>
+                </div>
                 <div className=" flex items-center gap-1 justify-between">
                     <div className=" flex items-center text-lg font-semibold gap-1 ">
                         <FaHome />
@@ -19,7 +23,9 @@ const SingleCard = ({ cards }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link  
+                    to={`/cards/${id}`}
+                    ><button className="btn btn-outline btn-secondary">Show Details</button></Link>
                 </div>
             </div>
         </div>

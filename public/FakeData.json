@@ -79,7 +79,7 @@
       "price": 750000,
       "status": "sale",
       "area": "6000 sq ft",
-      "location": "444 Countryside Lane, Rural Retreat",
+      "location": "444Countryside Lane,Rural Retreat",
       "facilities": ["living room", "swimming pool", "kitchen"],
       "image_url": "https://i.ibb.co/PFtmH3y/card7.jpg"
     },

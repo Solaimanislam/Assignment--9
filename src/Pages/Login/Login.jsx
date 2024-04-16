@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -9,6 +9,10 @@ import { FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -23,6 +27,9 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
+                // Navigate after login
+                navigate(location?.state ? location.state : '/');
                 
             })
             .catch(error => {
@@ -96,7 +103,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        <div className="text-3xl flex justify-center gap-6">
+                        <div className="text-3xl flex justify-center gap-6 border-b-2 pb-4">
                             <div className=" " onClick={handleGoogleSignIn}><FcGoogle /></div>
                             <div className=" " onClick={handleGithubSignIn}><FaGithub /></div>
                         </div>
@@ -106,8 +113,8 @@ const Login = () => {
                         {
                             success && <p className=" text-green-500 font-bold">{success}</p>
                         }
-                        <p className=" ml-9">New to myWebsite? please <Link to='/register'>
-                            <button className="btn btn-link">Register</button>
+                        <p className=" lg:ml-9 text-lg ">New to myWebsite? please<Link to='/register'>
+                            <button className="btn btn-link text-lg font-semibold">Register</button>
                         </Link></p>
                     </div>
 

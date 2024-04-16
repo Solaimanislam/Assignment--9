@@ -15,7 +15,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('FakeData.json')
+                loader: () => fetch('/FakeData.json')
             },
             {
                 path: '/login',
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/property',
+                path: '/cards/:id',
                 element: <PrivateRoutes><Property></Property></PrivateRoutes>
             }
         ]
