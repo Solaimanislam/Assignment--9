@@ -106,18 +106,7 @@
       "location": "666 Lakeside Drive, Serenity Bay",
       "facilities": ["living room", "kitchen"],
       "image_url": "https://i.ibb.co/mytNMqr/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge.jpg"
-    },
-    {
-      "id": 10,
-      "estate_title": "Spacious Family Home with Garden",
-      "segment_name": "Family",
-      "description": "Generously sized family home with a beautiful garden, perfect for outdoor gatherings and play.",
-      "price": 450000,
-      "status": "sale",
-      "area": "2800 sq ft",
-      "location": "777 Garden Street, Green Acres",
-      "facilities": ["living room", "kitchen"],
-      "image_url": "https://i.ibb.co/VvY6TzL/card10.jpg"
     }
+    
   ]
   

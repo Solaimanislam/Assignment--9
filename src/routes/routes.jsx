@@ -7,6 +7,7 @@ import Property from "../Pages/Property/Property";
 import PrivateRoutes from "./PrivateRoutes";
 import Error from "../Pages/Error/Error";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import Blogs from "../Pages/Blogs/Blogs";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
             {
                 path: '/UpdateP',
                 element: <PrivateRoutes><UpdateProfile></UpdateProfile> </PrivateRoutes>
+            },
+            {
+                path: '/blogs',
+                element: <PrivateRoutes><Blogs></Blogs></PrivateRoutes>,
+                loader: () => fetch('/BlogData.json')
             }
         ]
     }

@@ -1,0 +1,104 @@
+[
+    {
+      "id": 1,
+      "title": "10 Tips for First-Time Homebuyers",
+      "description": "A comprehensive guide offering essential advice for individuals navigating the process of purchasing their first home.",
+      "author": "Jane Smith",
+      "location": "United States",
+      "category": "Home Buying",
+      "tags": ["first-time homeBuyers", "home buying tips", "real estate"],
+      "image_url": "https://i.ibb.co/jrfVsZL/blog1.webp"
+    },
+    {
+      "id": 2,
+      "title": "How to Stage Your Home for a Quick Sale",
+      "description": "Learn effective strategies and techniques to present your home in its best light, ensuring a swift and successful sale.",
+      "author": "John Doe",
+      "location": "Canada",
+      "category": "Home Selling",
+      "tags": ["home staging", "selling tips", "real estate"],
+      "image_url": "https://i.ibb.co/ZBtMdTf/blog2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Top 5 DIY Home Improvement Projects",
+      "description": "Discover five engaging do-it-yourself projects that can enhance your home's functionality and aesthetic appeal without breaking the bank.",
+      "author": "Emily Johnson",
+      "location": "Australia",
+      "category": "Home Improvement",
+      "tags": ["DIY", "home improvement", "renovation"],
+      "image_url": "https://i.ibb.co/GnVgQCw/blog3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Creating a Cozy Atmosphere: Tips for Winter Home Decor",
+      "description": "Explore various methods to infuse warmth and comfort into your living spaces during the winter months, transforming your house into a cozy retreat.",
+      "author": "Michael Brown",
+      "location": "United Kingdom",
+      "category": "Home Decor",
+      "tags": ["winter decor", "home decor", "interior design"],
+      "image_url": "https://i.ibb.co/Q8yxdNz/blog4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Energy-Saving Tips for Your Home",
+      "description": "Learn practical strategies and techniques to reduce energy consumption and lower utility bills while minimizing your environmental footprint.",
+      "author": "Sarah Thompson",
+      "location": "Germany",
+      "category": "Energy Efficiency",
+      "tags": ["energy saving", "home efficiency", "green living"],
+      "image_url": "https://i.ibb.co/zQdpZmf/blog5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Benefits of Smart Home Technology",
+      "description": "Discover the advantages of incorporating smart home technology into your living space, enhancing convenience, security, and energy efficiency.",
+      "author": "David Wilson",
+      "location": "France",
+      "category": "Smart Homes",
+      "tags": ["smart home", "home automation", "technology"],
+      "image_url": "https://i.ibb.co/nnjNHQR/blog6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Essential Garden Maintenance Tips for Homeowners",
+      "description": "Gain valuable insights into maintaining a beautiful and healthy garden year-round, ensuring your outdoor space remains vibrant and inviting.",
+      "author": "Sophia Lee",
+      "location": "Spain",
+      "category": "Gardening",
+      "tags": ["gardening", "landscaping", "home maintenance"],
+      "image_url": "https://i.ibb.co/ph7NLBD/blog7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Choosing the Right Flooring for Your Home",
+      "description": "Learn how to select the perfect flooring materials that suit your lifestyle, preferences, and budget, while complementing your home's interior design.",
+      "author": "Mark Anderson",
+      "location": "Italy",
+      "category": "Home Renovation",
+      "tags": ["flooring", "home renovation", "interior design"],
+      "image_url": "https://i.ibb.co/tJwzVzX/blog8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Importance of Home Security Systems",
+      "description": "Discover why investing in a reliable home security system is crucial for safeguarding your property, possessions, and loved ones against potential threats.",
+      "author": "Laura Martinez",
+      "location": "Japan",
+      "category": "Home Security",
+      "tags": ["home security", "security systems", "safety"],
+      "image_url": "https://i.ibb.co/ctshQYQ/blog9.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Energy-Saving Tips for Your Home",
+        "description": "Learn practical strategies and techniques to reduce energy consumption and lower utility bills while minimizing your environmental footprint.",
+        "author": "Sarah Thompson",
+        "location": "Germany",
+        "category": "Energy Efficiency",
+        "tags": ["energy saving", "home efficiency", "green living"],
+        "image_url": "https://i.ibb.co/zQdpZmf/blog5.jpg"
+      }
+
+  ]
+  
