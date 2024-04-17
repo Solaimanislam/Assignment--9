@@ -19,7 +19,9 @@ const Home = () => {
                 <p className=" text-base lg:text-xl font-medium">The Largest Residential Area, also known simply as TLRA, is a sprawling suburban community located just outside the bustling city center. With its vast expanse of neatly arranged streets and housing complexes, TLRA is home to thousands of families seeking a peaceful yet convenient lifestyle.</p>
             </div>
             {/* card section */}
-            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-7 lg:my-10" >
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-7 lg:my-10" data-aos="zoom-in"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">
                 {
                     cards.map(card => <SingleCard
                         key={card.id}

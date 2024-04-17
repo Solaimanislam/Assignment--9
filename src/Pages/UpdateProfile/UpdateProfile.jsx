@@ -8,7 +8,7 @@ import { TabTitle } from '../../utils/Gtitle';
 
 const UpdateProfile = () => {
     TabTitle('Update Profile');
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const {user, updateUserProfile, setUser } = useContext(AuthContext);
 
     const handleUpdate = e => {
         e.preventDefault();
@@ -17,22 +17,12 @@ const UpdateProfile = () => {
         
         console.log(name, image);
 
-        createUser( name, image)
-        .then(result => {
-            updateUserProfile(name, image)
+        
+        updateUserProfile(name, image)
             .then(() => {
+                setUser({...user,displayName:name, photoURL: image})
                 toast.success('User updated Successfully');
             })
-            console.log(result.user)
-            // setSuccess('User Created Successfully');
-            toast.success('User Created Successfully');
-        })
-        .catch(error => {
-            console.error(error);
-            // setRegisterError(error.message);
-            toast.warn('Email-already-in-use');
-        })
-
     }
 
 

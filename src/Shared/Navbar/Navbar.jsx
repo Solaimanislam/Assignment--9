@@ -17,8 +17,8 @@ const Navbar = () => {
     const NavLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/UpdateP'>Updated Profile</NavLink></li>
-        
-        
+
+
         <li><NavLink to='/contact'>Contact Us</NavLink></li>
 
     </>
@@ -46,9 +46,12 @@ const Navbar = () => {
                 <Link to='/login'>
                     {
                         user ? <>
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mb-0">
+                            <div  className=" btn-ghost btn-circle avatar ">
                                 <div className="w-10 mb-0 rounded-full">
-                                    <img className="mb-0 p-0" src={user?.photoURL} alt="" />
+                                    
+                                    <div className="tooltip" data-tip="hello">
+                                    <img className="" src={user?.photoURL} alt="" />
+                                    </div>
                                 </div>
                             </div>
                             {/* <span>{user?.email}</span> */}

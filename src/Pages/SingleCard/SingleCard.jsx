@@ -1,11 +1,14 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const SingleCard = ({ cards }) => {
     const { estate_title, image_url, segment_name, location, status, id } = cards;
     return (
-        <div className="card card-compact bg-base-100 shadow-xl">
+        <div className="card card-compact bg-base-100 shadow-xl" data-aos="zoom-in"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="3000">
             <figure><img className=" w-full lg:h-[300px]" src={image_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <div className="flex items-center justify-between">
@@ -33,3 +36,7 @@ const SingleCard = ({ cards }) => {
 };
 
 export default SingleCard;
+
+SingleCard.propTypes = {
+    cards: PropTypes.node
+}

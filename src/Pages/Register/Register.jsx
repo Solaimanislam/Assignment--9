@@ -15,7 +15,7 @@ const Register = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
@@ -51,8 +51,10 @@ const Register = () => {
 
         createUser(email, password, name, image)
             .then(result => {
-               
-                console.log(result.user)
+                updateUserProfile(name, image).then(() => {
+
+                    console.log(result.user)
+                })
                 // setSuccess('User Created Successfully');
                 toast.success('User Created Successfully');
                  // Navigate after login
