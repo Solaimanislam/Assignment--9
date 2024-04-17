@@ -46,8 +46,8 @@ const Navbar = () => {
                 <Link to='/login'>
                     {
                         user ? <>
-                            <div  className=" btn-ghost btn-circle avatar ">
-                                <div className="w-10 mb-0 rounded-full">
+                            <div  className="  btn-circle avatar ">
+                                <div className="w-10 rounded-full">
                                     
                                     <div className="tooltip" data-tip="hello">
                                     <img className="" src={user?.photoURL} alt="" />
