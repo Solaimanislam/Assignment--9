@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 
 const Blog = ({ blogs }) => {
     const { title, image_url, category, location, author, description } = blogs;
-    console.log(blogs);
+    // console.log(blogs);
     return (
         <div>
-            <div className="card card-compact bg-base-100 shadow-xl" data-aos="zoom-in"
+            <div className="card card-compact bg-base-100 shadow-xl" data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="3000">
             <figure><img className=" w-full lg:h-[300px]" src={image_url} alt="Shoes" /></figure>

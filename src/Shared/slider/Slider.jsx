@@ -16,6 +16,7 @@ const Slider = () => {
     return (
 
         <Swiper
+        className="lg:mt-0 -z-30"
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectFlip]}
             spaceBetween={50}
             effect="flip"
